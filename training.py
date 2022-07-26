@@ -36,6 +36,8 @@ django-admin startproject CRUD
       edit
       home
       index
+      navbar.html
+      status	
     admin
       from .models import *
       admin.site.register(Table_Name)
