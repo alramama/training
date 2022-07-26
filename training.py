@@ -1,6 +1,4 @@
 django-admin startproject CRUD
-  __init__
-  asgi
   settings
       INSTALLED_APPS = [
     'django.contrib.admin',
@@ -30,23 +28,18 @@ django-admin startproject CRUD
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) #added
 
 
-  wsgi
   media
   python manage.py startapp student
-    migrations
     templates
       create
       download
       edit
       home
       index
-      Index1
-    __init__
     admin
       from .models import *
       admin.site.register(Table_Name)
 
-    apps
     forms
       from .models import *
 
@@ -59,7 +52,6 @@ django-admin startproject CRUD
       class Table_Name(models.Model):
         filed_name = models.Data_Type(max_length=200, null=True)
 
-    tests
     urls
       urlpatterns = [
 	    path('page_name/', views.views_name, name="page_name"),
