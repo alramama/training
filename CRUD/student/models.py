@@ -1,14 +1,9 @@
 from django.db import models
 
-class Stud(models.Model):
-    name = models.CharField(max_length = 50 )
-    email = models.EmailField(blank = True )
-    number = models.IntegerField()
-    hobbies = models.CharField(blank = True, max_length =255 )
-    gender = models.CharField(blank = True, max_length =50 )
-    education = models.BooleanField(blank = True, max_length =50 )
-    image = models.FileField(upload_to='media',blank = True)
-    age = models.CharField(blank = True,max_length =50 )
-
-    class Meta:
-        db_table = "student"
+class BID(models.Model):
+    publish_date = models.CharField(max_length = 50 )
+    bid_description  = models.EmailField(blank = True )
+    End_user = models.CharField(blank = True, max_length =255 )
+    activity_type = models.CharField(blank = True, max_length =255 )
+    reference_no = models.CharField(blank = True, max_length =50 )
+    last_date_of_clarifications = models.FileField(upload_to='media',blank = True)
