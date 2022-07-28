@@ -1,7 +1,7 @@
 from django import forms
 from student.models import Stud
 
-class StudForm(forms.ModelForm):
+class BIDForm(forms.ModelForm):
     class Meta:
-        model = Stud
+        model = BID
         fields = '__all__'
