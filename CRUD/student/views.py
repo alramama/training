@@ -2,14 +2,19 @@ from django.shortcuts import render
 import mimetypes
 
 from django.shortcuts import render ,redirect
-from student.forms import StudForm
-from student.models import Stud
+from student.forms import *
+from student.models import *
 from django.http import HttpResponse
 from django.contrib import messages
 import os
 # Import HttpResponse module
 from django.http.response import HttpResponse
 
+def show_stud(request):
+    bid = Stud.objects.order_by('-id');
+    return render(request, 'index.html', {'bid':bid})
+
+"""
 def create_stud(request):
     form = StudForm()
     if request.method == "POST":
@@ -28,9 +33,6 @@ def create_stud(request):
         form = StudForm()
     return render(request, 'create.html',{'form':form})
 
-def show_stud(request):
-    stud = Stud.objects.order_by('-id');
-    return render(request, 'index.html', {'stud':stud})
 
 def edit_stud(requst, id):
     stud = Stud.objects.get(id=id)
@@ -66,3 +68,4 @@ def index1(request):
     context = Stud.objects.all()
     return render(request,'index1.html',{'context':context})
 
+"""
