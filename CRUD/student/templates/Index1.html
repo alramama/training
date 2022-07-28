@@ -1,0 +1,11 @@
+<html>
+<head>
+    <title>Download Files</title>
+</head>
+<body>
+    {% for i in context %}
+    <h1>Title:{{i.name}}</h1>
+    <h1>DOWNLOAD THE FILE FROM HERE<a href="{{i.image.url}}" download>{{i.name}}</a></h1>
+    {% endfor %}
+</body>
+</html>
