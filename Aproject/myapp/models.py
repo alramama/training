@@ -10,7 +10,7 @@ class BookLibrary(models.Model):
         db_table = 'book_library'
 
     publish_date = models.CharField(max_length = 50 )
-    bid_description  = models.EmailField(blank = True )
+    bid_description  = models.CharField(max_length = 255 )
     End_user = models.CharField(blank = True, max_length =255 )
     activity_type = models.CharField(blank = True, max_length =255 )
     reference_no = models.CharField(blank = True, max_length =50 )
