@@ -9,9 +9,9 @@ class BookLibrary(models.Model):
     class Meta:
         db_table = 'book_library'
 
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=150)
-    about = models.TextField()
-    category = models.CharField(max_length=10)
-    author = models.CharField(max_length=500)
-    published_at = models.DateTimeField(default=timezone.now)
+    publish_date = models.CharField(max_length = 50 )
+    bid_description  = models.EmailField(blank = True )
+    End_user = models.CharField(blank = True, max_length =255 )
+    activity_type = models.CharField(blank = True, max_length =255 )
+    reference_no = models.CharField(blank = True, max_length =50 )
+    last_date_of_clarifications = models.FileField(upload_to='media',blank = True)
