@@ -5,7 +5,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 
-class Film(models.Model):
+class BID(models.Model):
     bid_description  = models.CharField(blank = True, max_length =255 )
     End_user = models.CharField(blank = True, max_length =255 )
     activity_type = models.CharField(blank = True, max_length =255 )
