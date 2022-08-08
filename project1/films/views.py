@@ -5,37 +5,37 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .models import Film
+from .models import BID
 
-class FilmBaseView(View):
-    model = Film
+class BIDBaseView(View):
+    model = BID
     fields = '__all__'
     success_url = reverse_lazy('films:all')
 
-class FilmListView(FilmBaseView, ListView):
+class BIDListView(BIDBaseView, ListView):
     """View to list all films.
     Use the 'film_list' variable in the template
-    to access all Film objects"""
+    to access all BID objects"""
 
-class FilmDetailView(FilmBaseView, DetailView):
+class BIDDetailView(BIDBaseView, DetailView):
     """View to list the details from one film.
     Use the 'film' variable in the template to access
     the specific film here and in the Views below"""
 
-class FilmCreateView(FilmBaseView, CreateView):
+class BIDCreateView(BIDBaseView, CreateView):
     """View to create a new film"""
 
-class FilmUpdateView(FilmBaseView, UpdateView):
+class BIDUpdateView(BIDBaseView, UpdateView):
     """View to update a film"""
 
-class FilmDeleteView(FilmBaseView, DeleteView):
+class BIDDeleteView(BIDBaseView, DeleteView):
     """View to delete a film"""
 from django.http import FileResponse
 
 def index1(request):
     if request.method=='POST':
-        upload1 = request.FILES['Film']
-        object = Film.objects.create(upload=upload1)
+        upload1 = request.FILES['BID']
+        object = BID.objects.create(upload=upload1)
         object.save()
-    context = Film.objects.all()
-    return render(request,'film_list.html',{'context':context})
+    context = BID.objects.all()
+    return render(request,'bid_list.html',{'context':context})
