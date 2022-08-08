@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
-    'films.apps.FilmsConfig',
+    'bids.apps.bidsConfig',
 
 ]
 
